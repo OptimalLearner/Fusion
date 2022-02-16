@@ -6,6 +6,9 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
 }
+.primary-font {
+    font-family: 'Noto Sans', sans-serif;
+}
 /* Flex Classes */
 .d-flex {
     display: flex;
@@ -19,10 +22,13 @@ body {
 .align-items-center {
     align-items: center;
 }
+.align-items-end {
+    align-items: flex-end;
+}
 .flex-column {
     flex-direction: column;
 }
-/* Navbar Styles */
+/* Navbar Section - Desktop Screen Styles */
 .navbar {
     height: 5rem;
     width: 100%;
@@ -56,8 +62,7 @@ body {
     position: relative;
 }
 .nav-links li a {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: #F2F5F7;
     text-decoration: none;
     margin: 2rem 1.5rem;
@@ -80,11 +85,11 @@ body {
     width: 50%;
 }
 .nav-login-btn {
-    font-size: 1.4rem;
+    font-size: 1rem;
     background-color: transparent;
     color: #F2F5F7;
     border: 0.1rem solid #F2F5F7;
-    border-radius: 2rem;
+    border-radius: 0.3rem;
     padding: 0.4rem 2.5rem;
     margin: 0 1rem;
     cursor: pointer;
@@ -96,7 +101,7 @@ body {
     transition: all ease-in 100ms;
 }
 .search-icon, .cart-icon {
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: #F2F5F7;
     margin: 0 1rem;
     cursor: pointer;
@@ -104,8 +109,8 @@ body {
 }
 .cart-icon::before {
     content: '0';
-    height: 1rem;
-    width: 1rem;
+    height: 0.8rem;
+    width: 0.8rem;
     border-radius: 50%;
     background-color: #1098F7;
     color: #000;
@@ -137,10 +142,9 @@ body {
 .toggle .line3 {
     transform: rotate(45deg) translate(-0.2rem,-0.5rem);
 }
-/* Styles For Smaller Screens */
+/* Navbar Section - Mobile Screen Styles */
 @media screen and (max-width: 800px) {
     .navbar {
-        position: fixed;
         z-index: 3;
     }
     .hamburger {
@@ -148,7 +152,7 @@ body {
         position: absolute;
         cursor: pointer;
         right: 5%;
-        top: 50%;
+        top: 2.5rem;
         transform: translate(-5%, -50%);
         z-index: 6;
         transition: all 0.7s ease;
@@ -157,6 +161,7 @@ body {
         position: fixed;
         display: flex;
         justify-content: center;
+        align-items: center;
         background: #000;
         height: 100vh;
         width: 100%;
@@ -167,6 +172,7 @@ body {
         transition: all 1s ease-out;
         pointer-events: none;
         padding: 0;
+        z-index: 3;
     }
     .nav-links.open {
         clip-path: circle(1000px at 90% -10%);
@@ -204,11 +210,575 @@ body {
     .nav-links-right, .nav-links-left {
         flex-direction: column;
     }
+    .nav-links-right {
+        align-items: center;
+    }
     .nav-links li a::before {
         content: '';
         top: 3.3rem;
     }
     .nav-links li a:hover::before {
         width: 30%;
+    }
+}
+/* Trending Section - Desktop Screen Styles */
+.trending {
+    background-color: #000;
+    width: 100vw;
+}
+.text1 {
+    text-align: center;
+}
+.trending h4 {
+    color: #F2F5F7;
+    font-size: 4rem;
+    margin: 3rem 0 0.5rem;
+    font-weight: 600;
+}
+.trending span {
+    display: inline-block;
+    color: #F2F5F7;
+    font-size: 2.5rem;
+    margin: 0 0 0rem;
+}
+.trending p {
+    color: #F2F5F7;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 1rem 30rem;
+}
+.main_banner_img {
+    width: 50rem;
+    height: 25rem;
+}
+.buy-now {
+    background-color: #1098F7;
+    color: #F2F5F7;
+    margin: 1.5rem 0;
+    padding: 0.5rem 4rem;
+    border: 0;
+    border-radius: 0.3rem;
+    outline-style: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+.buy-now:hover {
+    background-color: #F2F5F7;
+    color: #000;
+    transition: all ease 0.5s;
+}
+/* Trending Section - Mobile Screen Styles */
+@media screen and (max-width: 480px) {
+    .trending {
+        min-width: 100vw;
+    }
+    .main_banner_img {
+        width: 100%;
+        height: 15rem;
+    }
+    .text1 {
+        margin: 2rem 0;
+    }
+    .text1 h4 {
+        font-size: 2rem;
+    }
+    .text1 span {
+        font-size: 1.3rem;
+        margin: 0.4rem 0;
+    }
+    .text1 p {
+        font-size: 0.8rem;
+        padding: 1rem;
+    }
+    .buy-now {
+        margin: 0.6rem 0 1.6rem;
+        padding: 0.5rem 3rem;
+        font-size: 1rem;
+    }
+}
+/* Features Section - Desktop Screen Styles */
+.features-section {
+    background-color: #F2F5F7;
+    color: #000;
+    width: 100vw;
+    padding: 3rem 0;
+}
+.features-section .container {
+    width: 75%;
+    flex-wrap: wrap;
+}
+.features-section .box {
+    min-height: 25rem;
+    background-color: #000;
+    color: #F2F5F7;
+    margin: 2rem 1.5rem;
+    border-radius: 3rem;
+    opacity: 0;
+    transition: all ease-in 1s;
+}
+.features-section .box1.fade, .features-section .box2.fade, .features-section .box3.fade, .features-section .box4.fade, .features-section .box5.fade {
+    opacity: 1 !important;
+    transition: all ease-in 1s;
+}
+.features-section .box1 div, .features-section .box2 div, .features-section .box3 div, .features-section .box4 div, .features-section .box5 div {
+    height: 90%;
+    justify-content: space-evenly;
+    font-size: 1.8rem;
+    padding: 1rem 2rem 1rem;
+    text-align: center;
+}
+.features-section .box1 div span, .features-section .box2 div span, .features-section .box3 div span, .features-section .box4 div span {
+    font-size: 9rem;
+    color: #1098F7;
+}
+.box5 .camera-img {
+    width: 20rem;
+    height: 26rem;
+}
+.features-heading {
+    font-size: 3rem;
+}
+.feature-card {
+    margin: 1rem;
+    padding: 1rem 2rem;
+    width: 15rem;
+}
+.feature-card .material-icons, .feature-card .material-icons-outlined {
+    font-size: 6.5rem;
+}
+.feature-card .feature-text {
+    padding-top: 0.5rem;
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: 600;
+}
+.feature-card .feature-description {
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    text-align: center;
+}
+/* Features Section - Mobile Screen Styles */
+@media screen and (max-width: 480px) {
+    .features-heading {
+        font-size: 1.8rem;
+        text-align: center;
+        margin: 0 3rem;
+    }
+    .feature-card {
+        padding: 0;
+        margin: 0.5rem;
+    }
+    .feature-card .material-icons-outlined {
+        font-size: 5rem;
+    }
+    .features-section .container {
+        width: 90%;
+    }
+    .features-section .box {
+        margin: 1rem;
+        border-radius: 1rem;
+    }
+    .features-section .box1 div, .features-section .box2 div, .features-section .box3 div, .features-section .box4 div, .features-section .box5 div {
+        font-size: 1.2rem;
+        padding: 1rem 2rem 1rem;
+    }
+    .features-section .box5 div {
+        flex-direction: column-reverse;
+    }
+    .features-section .box1 div span, .features-section .box2 div span, .features-section .box3 div span, .features-section .box4 div span {
+        font-size: 9rem;
+        color: #1098F7;
+    }
+    .box5 .camera-img {
+        width: 13rem;
+        height: 16rem;
+        margin: 1.5rem 0 0.5rem;
+    }
+}
+/* Display Section - Desktop Screen Styles */
+.display-section {
+    background-color: #000;
+    color: #F2F5F7;
+    width: 100vw;
+    padding: 5rem 0;
+}
+.text3 p {
+    font-size: 2.3rem;
+    padding: 0 5rem 0 0;
+}
+.display-section .container {
+    width: 80%;
+}
+.front-view-phone-img {
+    height: 35rem;
+}
+.display-section .display-card1, .display-section .display-card2 {
+    background-color: #F2F5F7;
+    color: #000;
+    padding: 2rem 0 0 0;
+    border-radius: 2.5rem;
+    width: 70%;
+}
+.display-card1 .text4 span, .display-card2 .text4 span {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+}
+.display-card1 .text4 h3, .display-card2 .text4 h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0.3rem 0;
+}
+.display-card1 .text4 p, .display-card2 .text4 p {
+    font-size: 1.2rem;
+    margin: 0.6rem 0 1.5rem;
+    width: 20rem;
+}
+.display-card1 .text4 .explore-more, .display-card2 .text4 .explore-more {
+    padding: 0.4rem 1.6rem;
+    border: 2px solid #000;
+    border-radius: 0.3rem;
+    background-color: #F2F5F7;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+.display-card1 .text4 .explore-more:hover, .display-card2 .text4 .explore-more:hover {
+    background-color: #1098F7;
+    border: 2px solid #1098F7;
+    color: #F2F5F7;
+}
+.switch-img {
+    height: 25rem;
+}
+.display-section .display-card2 {
+    padding: 0;
+    margin: 3rem 0 0;
+}
+.display-card2 .text4 h3 {
+    width: 20rem;
+}
+.exchange-img {
+    padding: 6rem 0 0;
+    height: 20rem;
+}
+/* Display Section - Mobile Screen Styles */
+@media screen and (max-width: 480px) {
+    .display-section .container {
+        flex-direction: column;
+        width: 90%;
+    }
+    .text3 p {
+        font-size: 1.5rem;
+        padding: 1rem 2rem 0;
+        margin: 1.5rem 0 0;
+        text-align: center;
+    }
+    .display-section .display-card1, .display-section .display-card2 {
+        flex-direction: column;
+        width: 70%;
+        padding: 1rem 1rem 0;
+        border-radius: 1rem;
+    }
+    .display-section .display-card2 {
+        flex-direction: column-reverse;
+    }
+    .display-card1 .text4, .display-card2 .text4 {
+        width: 100%;
+        margin: 1rem 1.2rem;
+    }
+    .display-card1 .text4 span, .display-card2 .text4 span {
+        font-size: 0.9rem;
+    }
+    .display-card1 .text4 h3, .display-card2 .text4 h3 {
+        font-size: 1.2rem;
+    }
+    .display-card1 .text4 p, .display-card2 .text4 p {
+        width: auto;
+        font-size: 0.9rem;
+    }
+    .display-card1 .text4 .explore-more, .display-card2 .text4 .explore-more {
+        font-size: 1rem;
+    }
+    .switch-img {
+        height: 14rem;
+    }
+    .exchange-img {
+        height: 10rem;
+        padding: 0;
+    }
+}
+/* Specification Section - Desktop Screen Styles */
+.specification {
+    background-color: #F2F5F7;
+    padding: 4rem 0;
+    gap: 4rem;
+}
+.specification .container {
+    flex-wrap: wrap;
+    background-color: #000;
+    padding: 1rem;
+    vertical-align: middle;
+    border-radius: 1.5rem;
+    margin-left: -3rem;
+}
+.specification .container .column div {
+    margin: 1rem 0.5rem;
+    border-radius: 1rem;
+}
+.gallery1 {
+    width: 12rem;
+    height: 7rem;
+    background: url('../assets/gallery1.jpg') no-repeat center center;
+    background-size: cover;
+    border: 1px solid #000;
+}
+.gallery2 {
+    width: 13rem;
+    height: 9rem;
+    background: url('../assets/gallery2.jpg') no-repeat center center;
+    background-size: cover;
+    border: 1px solid #000;
+}
+.gallery3 {
+    width: 13rem;
+    height: 26rem;
+    background: url('../assets/gallery3.jpg') no-repeat center center;
+    background-size: cover;
+    border: 1px solid #000;
+}
+.gallery4 {
+    width: 12rem;
+    height: 18rem;
+    background: url('../assets/gallery4.jpg') no-repeat center center;
+    background-size: cover;
+    border: 1px solid #000;
+}
+.gallery5 {
+    width: 13rem;
+    height: 16rem;
+    background: url('../assets/gallery5.jpg') no-repeat center center;
+    background-size: cover;
+    border: 1px solid #000;
+}
+.text5 h3 {
+    max-width: 24rem;
+    font-size: 2.3rem;
+}
+.text5 .show-spec-btn {
+    padding: 0.4rem 1.6rem;
+    border: 2px solid #000;
+    border-radius: 0.3rem;
+    background-color: #000;
+    color: #F2F5F7;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+.text5 .show-spec-btn span {
+    margin-left: 0.4rem;
+}
+.text5 .show-spec-btn:hover {
+    background-color: #1098F7;
+    border: 2px solid #1098F7;
+    color: #F2F5F7;
+}
+/* Specification Section - Mobile Screen Styles */
+@media screen and (max-width: 480px) {
+    .specification {
+        flex-direction: column;
+    }
+    .specification .container {
+        margin-left: 0;
+        width: 80%;
+        justify-content: space-around;
+    }
+    .specification .container .column {
+        margin-left: 0;
+        width: 45%;
+    }
+    .specification .container .column:nth-child(3) {
+        width: 100%;
+    }
+    .specification .container .column div {
+        margin:  0.5rem 0;
+    }
+    .gallery1 {
+        width: 100%;
+        height: 12rem;
+    }
+    .gallery2 {
+        width: 100%;
+        height: 13rem;
+    }
+    .gallery3 {
+        width: 100%;
+        height: 15rem;
+    }
+    .gallery4 {
+        width: 100%;
+        height: 15rem;
+    }
+    .gallery5 {
+        width: 100%;
+        height: 14rem;
+    }
+    .text5 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 2rem;
+        text-align: center;
+    }
+    .text5 h3 {
+        font-size: 1.5rem;
+    }
+}
+/* Footer Section - Desktop Screen Styles */
+.footer {
+    background-color: #000;
+    color: #F2F5F7;
+    padding: 3.5rem 3rem 1rem;
+}
+.footer .container {
+    width: 80%;
+}
+.footer h3 {
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.footer ul {
+    padding: 0;
+    list-style: none;
+    line-height: 1.8;
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+.footer ul a, .footer p {
+    color: #F2F5F777;
+    text-decoration: none;
+}
+.footer ul a:hover {
+    color: #1098F7;
+}
+.footer .footer-social i {
+    font-size: 1.5rem;
+    color: #F2F5F7BB;
+    border: 2px solid #F2F5F7BB;
+    border-radius: 50%;
+    width: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+    margin: 3rem 2rem 2rem;
+    cursor: pointer;
+}
+.footer .footer-social i:hover {
+    background-color: #F2F5F7;
+    color: #000;
+}
+.footer .footer-copyright {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+/* Footer Section - Mobile Screen Styles */
+@media screen and (max-width: 480px) {
+    .footer {
+        padding: 3rem 2rem 1rem;
+    }
+    .footer .container {
+        width: 100%;
+        flex-direction: column;
+    }
+    .footer .container div {
+        width: 90%;
+        margin-bottom: 1.5rem;
+    }
+    .footer .footer-social {
+        flex-wrap: wrap;
+    }
+    .footer .footer-social i {
+        margin: 1rem;
+        font-size: 1rem;
+        width: 1rem;
+    }
+}
+/* Back-To-Top Button - All Screens Styles */
+.back-to-top {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: #1098F7;
+    color: #F2F5F7;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.3rem;
+    transition: background-color .3s, opacity .5s, visibility .5s;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    cursor: pointer;
+}
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transition: background-color .3s, opacity .5s, visibility .5s;
+}
+/* Cookie Alert Section - Desktop Screen Styles */
+.cookie-alert {
+    position: fixed;
+    bottom: 0;
+    background-color: #F2F5F7F9;
+    width: 100vw;
+    padding: 1rem 0.5rem;
+    z-index: 2;
+}
+.cookie-alert.cookie-close {
+    display: none;
+}
+.text2, .cookie-btn-group, .close-cookie-alert {
+    padding: 2px 2rem;
+}
+.cookie-btn-group button, .close-cookie-alert {
+    cursor: pointer;
+}
+.text2 {
+    font-size: 1rem;
+    padding: 2px 1rem 2px 2rem;
+}
+.text2 span {
+    color: #00000055;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 600;
+}
+.text2 span:hover {
+    color: #000;
+    transition: all ease 1s;
+}
+.cookie-btn-group button {
+    margin: 0 0.4rem;
+    padding: 0.5rem 2.3rem;
+    border: 1px solid #000;
+    border-radius: 0.2rem;
+}
+.cookie-btn-group .accept {
+    background-color: #1098F7;
+    color: #F2F5F7;
+    border: 0;
+    outline: none;
+}
+/* Cookie Alert Section - Mobile Screen Styles */
+@media screen and (max-width: 480px) {
+    .cookie-alert {
+        flex-direction: column;
+        padding: 1.2rem 0;
+    }
+    .text2 {
+        margin: 1rem 0.5rem;
+    }
+    .close-cookie-alert {
+        position: absolute;
+        top: 3%;
+        right: 0;
     }
 }
