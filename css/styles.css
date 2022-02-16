@@ -9,6 +9,19 @@ body {
 .primary-font {
     font-family: 'Noto Sans', sans-serif;
 }
+/* Scrollbar Styles */
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F2F5F755;
+}
+::-webkit-scrollbar {
+	width: 10px;
+	background-color: #F5F5F5;
+}
+::-webkit-scrollbar-thumb {
+	background-color: #1098F7;	
+	background-image: -webkit-linear-gradient(45deg, #F5F5F577 25%, transparent 25%, transparent 50%, #F5F5F577 50%, #F5F5F577 75%, transparent 75%, transparent)
+}
 /* Flex Classes */
 .d-flex {
     display: flex;
